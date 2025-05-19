@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Text from '../../components/Text';
-import { cities } from '../../constants/address';
+import Text from '../../../components/Text';
+import { cities } from '../../../constants/address';
 import Address from './Address';
 import styles from './Header.module.css';
 import Search from './Search';

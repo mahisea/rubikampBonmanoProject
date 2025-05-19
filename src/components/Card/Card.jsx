@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "../Button/Button";
 const Card = () => {
   const [count, setCount] = useState(1);
-  const [price] = useState(3500);
+  const [price] = useState(12000);
 
   return (
     <div>

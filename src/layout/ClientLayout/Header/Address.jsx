@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import Button from '../../components/Button/Button';
-import { cities } from '../../constants/address';
+import Button from '../../../components/Button/Button';
+import { cities } from '../../../constants/address';
 
 const Address = (props) => {
     const cityObject = cities.find(city => city.id === props.city)

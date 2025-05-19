@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Input from '../../components/Input';
+import Input from '../../../components/Input';
 
 const Products = () => {
     const [name, setName] = useState('');
@@ -53,14 +53,14 @@ const Products = () => {
                 value={name}
                 placeholder='نام'
                 type="text"
-                onChange={value => setName(value)}
+                onChange={(e) => setName(e.target.value)}
             />
             <Input
                 value={price}
                 style={{border: '1px solid red', padding: '10px', borderRadius: '5px'}}
                 placeholder='قیمت'
                 type="number"
-                onChange={value => setPrice(value)}
+                onChange={(e) => setPrice(e.target.value)}
             />
             <select onChange={e => {
                 setcategory(e.target.value)
