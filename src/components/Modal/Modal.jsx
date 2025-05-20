@@ -4,7 +4,7 @@ import styles from './Modal.module.css';
 const Modal = ({onClose, onSubmit, title, description, hideCloseButton = false, hideSubmitButton = false}) => {
     return (
         createPortal(
-            <div className={styles.root}>
+            <div className={styles.root} onClick={onClose}>
                 <div className={styles.modal}>
                     <h2>{title}</h2>
                     <section>{description}</section>

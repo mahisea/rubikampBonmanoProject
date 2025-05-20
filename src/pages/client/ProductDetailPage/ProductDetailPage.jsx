@@ -1,6 +1,7 @@
-import ProductLayoutPage from "@/layout/ClientLayout/ProductLayoutPage";
+import ProductLayoutPage from "@/layout/ClientLayout/ProductLayoutPage/ProductLayoutPage.jsx";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+// import ImageSlider from "@/components/Slider/Slider";
 
 const breadcrumbsBusiness = [
     {label: "دانه قهوه اسپرسو جیورنو", link: "/bussiness/products/1"},
@@ -11,6 +12,7 @@ const breadcrumbsBusiness = [
 ]
 
 // const images = ["banana", "apple", "orange", "pineapple", "strawberry", "watermelon", "mango", "grape", "pear", "peach"]
+const images = ["1", "2", "3"]
 
 const SliderDot = ({text, onClick, key, isSelected}) => {
     return (
@@ -23,15 +25,18 @@ const SliderDot = ({text, onClick, key, isSelected}) => {
     )
 }
 
+
+
 const Slider = ({images}) => {
+    
     const [selected, setSelected] = useState(0)
 
     const handleOnBefore = () => {
-        setSelected(selected-1)
+        setSelected(selected >= 1 ? selected - 1 : selected)
     }
 
     const handleOnAfter = () => {
-        setSelected(selected+1)
+        setSelected(selected + 1)
     }
 
     return (
@@ -41,10 +46,10 @@ const Slider = ({images}) => {
              flexDirection: 'column',
               alignItems: 'center', 
               justifyContent: 'center', 
-              border: '1px solid red'
+              border: '1px solid #e3ce10'
               }}>
             <div id="selected-image" style={{
-                border: '1px solid green',
+                border: '1px solid #abb',
                 width: '100px',
                 height: '100px'
             }}>
@@ -56,7 +61,8 @@ const Slider = ({images}) => {
                 flexDirection: 'row',
                 alignItems: 'center',
                 justifyContent: 'center',
-                border: '1px solid blue',
+                margin : "10px",
+                // border: '1px solid #',
                 gap: '4px'
             }}>
                 <SliderDot onClick={handleOnBefore} text={"<"} />
@@ -90,7 +96,7 @@ const ProductDetailPage = () => {
 
     useEffect(() => {
         if (id) {
-            fetch(`https://dummyjson.com/products/${id}`)
+            fetch(`http://localhost:8000/api/products/${id}`)
             .then(res => res.json())
             .then(res => {
                 setProduct(res)
@@ -108,10 +114,10 @@ const ProductDetailPage = () => {
 
     return (
         <ProductLayoutPage breadcrumbItems={breadcrumbsBusiness}>
-            <h1>{product?.title}</h1>
-            <h2>{product?.price}$</h2>
+            <h1>{product?.name}</h1>
+            <h2>${product?.price}</h2>
 
-            <Slider images={product.images} />
+            <Slider images={images} />
         </ProductLayoutPage>
     );
 };

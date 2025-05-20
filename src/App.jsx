@@ -1,4 +1,6 @@
 import { UserContext } from '@/context/UserContext';
+import { ProductContext } from './context/ProductContext';
+
 import PanelLayout from '@/layout/PanelLayout/PanelLayout';
 import HomePage from '@/pages/client/Home/HomePage';
 import ProductDetailPage from '@/pages/client/ProductDetailPage/ProductDetailPage';
@@ -10,7 +12,7 @@ import ProfileProduct from '@/pages/panel/Profile/Product/ProfileProduct'
 import links from '@/routes/links';
 import { useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './index.css';
+import  './index.css';
 const client_pages = [
   {
     path: links.client.home,
@@ -52,7 +54,8 @@ const panel_pages = [
 const App = () =>  {
   const isAuth = localStorage.getItem('token') ? true : false;
   const {user} = useContext(UserContext);
-  console.log("user from context: ", user);
+  const {product} = useContext(ProductContext);
+  console.log("user from context: ", user , product);
   
 
     return (

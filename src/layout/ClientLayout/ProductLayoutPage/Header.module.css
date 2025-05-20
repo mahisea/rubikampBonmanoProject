@@ -1,0 +1,6 @@
+.header {
+    background: #F87182;
+    border-radius: var(--border-radius-big);
+    padding: 10px;
+    font-family: var(--font-family);
+}

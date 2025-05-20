@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import Modal from "@/components/Modal/Modal";
+import styles from "./ProfileProduct.module.css";
 
 const makeBorderStyleByError = (bool) => ({
   border: "1px solid " + (bool ? "red" : "#abb"),
-  color: "black",
   borderRadius: 5,
   margin: "0 4px",
   padding: "5px",
@@ -17,6 +17,7 @@ const ProductFormManagement = ({
   cancelButtonText = "Cancel",
 }) => {
   const isCreateMode = !data;
+  ////////////
 
   const [error, setError] = useState({});
 
@@ -65,9 +66,9 @@ const ProductFormManagement = ({
         .then((res) => res.json())
         .then((res) => {
           console.log(res);
-          if (res.user) {
+          if (res.product) {
             console.log("success");
-            onSubmit(res.user);
+            onSubmit(res.product);
           } else {
             console.log("error");
           }
@@ -82,17 +83,16 @@ const ProductFormManagement = ({
         },
         body: JSON.stringify(form),
       })
-        /////
         .then((res) => res.json())
         .then((res) => {
           console.log(res);
-          if (res.user) {
+          if (res.product) {
             console.log("success");
-            onSubmit(res.user);
+            onSubmit(res.product);
           } else {
             console.log("error");
           }
-        }); ////////////////////////
+        });
     }
   };
 
@@ -125,6 +125,7 @@ const ProductFormManagement = ({
       />
       <br /> <br />
       <input
+        min="1"
         type="number"
         style={makeBorderStyleByError(error.price)}
         value={form.price}
@@ -144,6 +145,7 @@ const ProductFormManagement = ({
       <br /> <br />
       <input
         type="number"
+        min="0"
         style={makeBorderStyleByError(error.stock)}
         value={form.stock}
         placeholder="Stock"
@@ -160,7 +162,7 @@ const ProductFormManagement = ({
         onChange={handleChange}
       />
       <br /> <br />
-      <button disabled={isSubmitDisabled} type="submit">
+      <button disabled={isSubmitDisabled} type="submit" style={{marginRight: "20px"}}>
         {isCreateMode ? "create" : "update"}
       </button>
       {!hideCloseButton && (
@@ -171,6 +173,7 @@ const ProductFormManagement = ({
 };
 
 const Products = () => {
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
@@ -179,7 +182,6 @@ const Products = () => {
   const [deleteProduct, setDeleteProduct] = useState(null);
 
   const fetchProducts = async () => {
-    console.log("fetchProducts");
 
     const res = await fetch("http://localhost:8000/api/products", {
       headers: {
@@ -198,7 +200,6 @@ const Products = () => {
   useEffect(() => {
     fetchProducts();
   }, []);
-  /////////////////
 
   const handleDeleteProduct = (id) => {
     setLoading(true);
@@ -268,27 +269,30 @@ const Products = () => {
           }
         />
       )}
-      <h2>Profile Product Page</h2>
+      <h2>Product Management Page</h2>
       <h2>Table</h2>
-      <button onClick={() => setOpenCreateProductModal(true)}>
+      <button    style={{
+              padding: "5px",
+              marginLeft: "20px"
+      }}onClick={() => setOpenCreateProductModal(true)}>
         Create Product
       </button>
-      <div>Search</div>
       <br />
+      <br />
+      <label>Search : </label>
       <input
+      style={{border: "solid 2px #abb",
+              borderRadius: "5px",
+              padding: "5px"
+      }}
         type="text"
         placeholder="by Name & Category"
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <table style={{ border: "solid #abb", width: "80%", margin: "20px" }}>
+      <table>
         <thead>
-          <tr
-            style={{
-              textAlign: "left",
-              background: "lightGray",
-            }}
-          >
+          <tr>
             <th>Name</th>
             <th>Description</th>
             <th>Category</th>
@@ -309,12 +313,11 @@ const Products = () => {
                   products.category.toUpperCase().includes(search.toUpperCase())
               )
               .map((products) => (
-                <tr key={products.id} style={{ background: "#f4f4f4",
-                 }}>
-                  <td style={{padding : "5px"}}>{products.name}</td>
+                <tr key={products.id} >
+                  <td>{products.name}</td>
                   <td>{products.description}</td>
                   <td>{products.category}</td>
-                  <td>{products.price}</td>
+                  <td>${products.price}</td>
                   <td>{products.stock}</td>
                   <td>{products.createdAt}</td>
 

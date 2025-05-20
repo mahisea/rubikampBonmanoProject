@@ -1,11 +1,11 @@
-import styles from './Footer.module.css';
+import styles from "./Footer.module.css";
 
-const Footer = () => {
-    return (
-        <footer className={styles.root }>
-            فوتر سایت
-        </footer>
-    )
-}
+const Footer = ({children}) => {
+  return (
+  <footer
+   className={styles.root}>
+    {children} 
+    </footer>);
+};
 
 export default Footer;

@@ -1,6 +1,5 @@
-.header {
-    background: #F87182;
-    border-radius: var(--border-radius-big);
+.root{
+    background: #333;
+    color: #fff;
     padding: 10px;
-    font-family: var(--font-family);
 }
