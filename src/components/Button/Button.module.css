@@ -1,0 +1,350 @@
+.root {
+  all: unset;
+  cursor: pointer;
+}
+@font-face {
+  font-family: "Dana-Regular";
+  src: url("font/Dana-Regular.ttf") format("truetype");
+}
+
+:root {
+
+  --Primary-color-10: #fdf9f5;
+  --Primary-color-20: #FAF3EA;
+  --Primary-color-30: #F5E7D6;
+  --Primary-color-40: #F0DCC1;
+  --Primary-color-default: #C6A67D;
+  --Primary-color-60: #A68862;
+  --Primary-color-70: #755B3A;
+  --Primary-color-80: #553D1F;
+  --Primary-color-90: #452E11;
+
+  --Primary-color-dark-10: #E6B17E;
+  --Primary-color-dark-20: #D79A5C;
+  --Primary-color-dark-30: #C6883A;
+  --Primary-color-dark-40: #B3722A;
+  --Primary-color-dark-default: #9F5D1A;
+  --Primary-color-dark-60: #8B480A;
+  --Primary-color-dark-70: #753B06;
+  --Primary-color-dark-80: #5F2F04;
+
+  --Secoundury-color-10: #C1FFF2;
+  --Secoundury-color-20: #AEF5E6;
+  --Secoundury-color-30: #87E0CE;
+  --Secoundury-color-40: #74D6C2;
+  --Secoundury-color-50: #4DC1A9;
+  --Secoundury-color-default: #009879;
+  --Secoundury-color-70: #005B49;
+  --Secoundury-color-80: #002E24;
+  --Secoundury-color-90: #001E18;
+
+  --Secoundury-color-dark-10: #A1E3D0;
+  --Secoundury-color-dark-20: #7DD7BD;
+  --Secoundury-color-dark-30: #5CC8A9;
+  --Secoundury-color-dark-40: #3AA68F;
+  --Secoundury-color-dark-50: #0D9742;
+  --Secoundury-color-dark-default: #0D685D;
+  --Secoundury-color-dark-70: #035821;
+  --Secoundury-color-dark-80: #03362D;
+
+  --Success-color-10: #D0F8E0;
+  --Success-color-20: #A2F1C1;
+  --Success-color-default: #73E9A3;
+  --Success-color-40: #16DB65;
+  --Success-color-50: #0D833D;
+  --Success-color-60: #095828;
+  --Success-color-70: #042C14;
+  --Success-color-80: #02160A;
+  --Success-color-90: #001007;
+
+  --Success-color-dark-10: #75F0A1;
+  --Success-color-dark-20: #4DE27F;
+  --Success-color-dark-default: #28D164;
+  --Success-color-dark-40: #1AB453;
+  --Success-color-dark-50: #0D9742;
+  --Success-color-dark-60: #067832;
+  --Success-color-dark-70: #035821;
+  --Success-color-dark-80: #023C15;
+
+  --Error-color-10: #FBE6EB;
+  --Error-color-20: #F7CCD6;
+  --Error-color-30: #EF99AD;
+  --Error-color-40: #E0335B;
+  --Error-color-default: #D80032;
+  --Error-color-60: #AD0028;
+  --Error-color-70: #82001E;
+  --Error-color-80: #560014;
+  --Error-color-90: #2B000A;
+
+  --Error-color-dark-10: #FFABAB;
+  --Error-color-dark-20: #FF7F7F;
+  --Error-color-dark-30: #F55151;
+  --Error-color-dark-40: #D93535;
+  --Error-color-dark-default: #B71F1F;
+  --Error-color-dark-60: #951515;
+  --Error-color-dark-70: #730B0B;
+  --Error-color-dark-80: #520606;
+
+  --Info-color-10: #DFF4FF;
+  --Info-color-20: #C9E8F8;
+  --Info-color-30: #9CCFE9;
+  --Info-color-40: #86C2E2;
+  --Info-color-50: #59A9D3;
+  --Info-color-default: #0077B6;
+  --Info-color-70: #00476D;
+  --Info-color-80: #002437;
+  --Info-color-90: #000C12;
+
+  --Info-color-dark-10: #91C9FF;
+  --Info-color-dark-20: #62A8F7;
+  --Info-color-dark-30: #3287EF;
+  --Info-color-dark-40: #176DDA;
+  --Info-color-dark-50: #0E57B8;
+  --Info-color-dark-default: #094093;
+  --Info-color-dark-70: #062C6D;
+  --Info-color-dark-80: #031B48;
+
+  --Warn-color-10: #FFFEFE;
+  --Warn-color-20: #FFF9B2;
+  --Warn-color-30: #FFF799;
+  --Warn-color-default: #FFEE33;
+  --Warn-color-50: #FFEA00;
+  --Warn-color-60: #998C00;
+  --Warn-color-70: #4C4600;
+  --Warn-color-80: #191700;
+  --Warn-color-90: #131101;
+
+  --Warn-color-dark-10: #F8E08E;
+  --Warn-color-dark-20: #F4C954;
+  --Warn-color-dark-30: #F0B31A;
+  --Warn-color-dark-default: #DA970E;
+  --Warn-color-dark-50: #B87C06;
+  --Warn-color-dark-60: #955E03;
+  --Warn-color-dark-70: #734402;
+  --Warn-color-dark-80: #523001;
+
+  --Gray-color-10: #F7F8F8;
+  --Gray-color-20: #E6E9EB;
+  --Gray-color-30: #DEE1E5;
+  --Gray-color-default: #ADB5BD;
+  --Gray-color-50: #90979F;
+  --Gray-color-60: #575C62;
+  --Gray-color-70: #494D53;
+  --Gray-color-80: #2C3034;
+  --Gray-color-90: #1E2125;
+
+  --Gray-color-dark-10: #E0E0E0;
+  --Gray-color-dark-20: #C2C2C2;
+  --Gray-color-dark-30: #A4A4A4;
+  --Gray-color-dark-default: #868686;
+  --Gray-color-dark-50: #6A6A6A;
+  --Gray-color-dark-60: #4E4E4E;
+  --Gray-color-dark-70: #323232;
+  --Gray-color-dark-80: #1E1E1E;
+
+  --White-color: #FFF;
+
+  --Shadow-EL1: 0px 1px 1px 0px rgba(33, 33, 33, 0.25), 0px 2px 1px 0px rgba(33, 33, 33, 0.25), 0px 1px 3px 0px rgba(33, 33, 33, 0.25);
+  --Shadow-EL2: 0px 2px 2px 0px rgba(33, 33, 33, 0.25), 0px 3px 1px 0px rgba(33, 33, 33, 0.25), 0px 1px 5px 0px rgba(33, 33, 33, 0.25);
+  --Shadow-EL3: 0px 3px 4px 0px rgba(33, 33, 33, 0.25), 0px 3px 3px 0px rgba(33, 33, 33, 0.25), 0px 1px 8px 0px rgba(33, 33, 33, 0.25);
+  --Shadow-EL4: 0px 4px 5px 0px rgba(33, 33, 33, 0.25), 0px 1px 10px 0px rgba(33, 33, 33, 0.25), 0px 2px 4px 0px rgba(33, 33, 33, 0.25);
+  --Shadow-EL5: 0px 6px 10px 0px rgba(33, 33, 33, 0.25), 0px 1px 18px 0px rgba(33, 33, 33, 0.25), 0px 3px 5px 0px rgba(33, 33, 33, 0.25);
+  --Shadow-EL6: 0px 8px 10px 0px rgba(33, 33, 33, 0.25), 0px 3px 14px 0px rgba(33, 33, 33, 0.25), 0px 5px 5px 0px rgba(33, 33, 33, 0.25);
+  --Shadow-EL7: 0px 12px 17px 0px rgba(33, 33, 33, 0.25), 0px 5px 22px 0px rgba(33, 33, 33, 0.25), 0px 7px 8px 0px rgba(33, 33, 33, 0.25);
+  --Shadow-EL8: 0px 16px 24px 0px rgba(33, 33, 33, 0.25), 0px 6px 30px 0px rgba(33, 33, 33, 0.25), 0px 8px 10px 0px rgba(33, 33, 33, 0.25);
+  --Shadow-EL9: 0px 24px 38px 0px rgba(33, 33, 33, 0.25), 0px 9px 46px 0px rgba(33, 33, 33, 0.25), 0px 11px 15px 0px rgba(33, 33, 33, 0.25);
+
+
+  --Font-family-base: "Dana-Regular";
+
+  --Font-size-heading1: 64px;
+  --Font-weight-heading1: 950;
+
+  --Font-size-heading2: 48px;
+  --Font-weight-heading2: 800;
+
+  --Font-size-heading3:40px;
+  --Font-weight-heading3:800;
+
+  --Font-size-heading4:40px;
+  --Font-weight-heading4:700;
+
+  --Font-size-heading5:36px;
+  --Font-weight-heading5:700;
+
+  --Font-size-body1:32px;
+  --Font-weight-body1:700;
+
+  --Font-size-body2:32px;
+  --Font-weight-body2:600; 
+
+  --Font-size-body3:24px;
+  --Font-weight-body3:600; 
+
+  --Font-size-body4:24px;
+  --Font-weight-body4:400;  
+
+  --Font-size-body5:20px;
+  --Font-weight-body5:400; 
+
+  --Font-size-body6:16px;
+  --Font-weight-body6:400; 
+
+  --Font-size-lable1:15px;
+  --Font-weight-lable1:400;
+
+  --Font-size-lable2:14px;
+  --Font-weight-lable2:400;
+
+  --Font-size-lable3:12px;
+  --Font-weight-lable3:400;
+
+
+  --smallSize-padding: 3px 12px;
+  --mediumSize-padding: 5px 20px;
+  --largeSize-padding: 7px 28px;
+
+  --smallSize-border-radius: 6px;
+  --mediumSize-border-radius: 8px;
+  --largeSize-border-radius: 10px;
+  --model-border-radius: 50%;
+
+  --Gray-border: 1px solid var(--Gray-color-20);
+  --Error-border: 1px solid var(--Error-color-50);
+  --Primery-border: 1px solid var(--Primary-color-default);
+
+  --Gray-border-hover: 1px solid var(--Gray-color-30);
+  --Error-border-hover: 1px solid var(--Error-color-default);
+  --Primery-border-hover: 1px solid var(--Primary-color-80);
+
+  --Gray-border-disabled: 1px solid var(--Gray-color-10);
+  --Error-border-disabled: 1px solid var(--Error-color-10);
+  --Primery-border-disabled: 1px solid var(--Primary-color-10);
+}
+
+/* نمیدونم چجوری ولی فونت داره کار میکنه!... پس دست نمیزنم بهش */
+* {
+  font-family: var(--) !important;
+}
+
+.sizeSmall {
+  padding: var(--smallSize-padding);
+  border-radius: var(--smallSize-border-radius);
+}
+
+.sizeMedium {
+  padding: var(--mediumSize-padding);
+  border-radius: var(--mediumSize-border-radius);
+}
+
+.sizeLarge {
+  padding: var(--largeSize-padding);
+  border-radius: var(--largeSize-border-radius);
+}
+
+.typePrimary {
+  color: var(--white-color);
+  background: var(--Primary-color-default);
+  box-shadow: var(--Shadow-EL1); 
+}
+
+.typePrimary:hover {
+  background: var(--Primary-color-70);
+}
+
+.typePrimary:disabled {
+  background: var(--Primary-color-10);
+}
+
+.typeError {
+  color: var(--white-color);
+  background: var(--Error-color-50);
+}
+
+.typeError:hover {
+  background: var(--Error-color-default);
+}
+
+.typeError:disabled {
+  color: var(--white-color);
+  background: var(--Error-color-10);
+}
+
+.typeGray {
+  color: var(--white-color);
+  background: var(--Gray-color-20);
+}
+
+.typeGray:hover {
+  background: var(--Gray-color-30);
+}
+
+.typeGray:disabled {
+  background: var(--Gray-color-10);
+}
+
+/* .variantFill {
+} */
+
+.variantOutline {
+  background: var(--white-color);
+}
+
+.variantOutline.typePrimary {
+  border: var(--Primery-border);
+  color: var(--Primary-color-default);
+}
+
+.variantOutline.typePrimary:hover {
+  background: var(--white-color);
+  border: var(--Primery-border-hover);
+  color: var(--Primary-color-70);
+}
+
+.variantOutline.typePrimary:disabled {
+  background: var(--white-color);
+  border: var(--Primery-border-disabled);
+  color: var(--Primary-color-10);
+}
+
+.variantOutline.typeError {
+  border: var(--Error-border);
+  color: var(--Error-color-50);
+}
+
+.variantOutline.typeError:hover {
+  background: var(--white-color);
+  border: var(--Error-border-hover);
+  color: var(--Error-color-default);
+}
+
+.variantOutline.typeError:disabled {
+  background: var(--white-color);
+  border: var(--Error-border-disabled);
+  color: var(--Error-color-10);
+}
+
+.variantOutline.typeGray {
+  border: var(--Gray-border);
+  color: var(--Gray-color-20);
+}
+
+.variantOutline.typeGray:hover {
+  background: var(--white-color);
+  border: var(--Gray-border-hover);
+  color: var(--Gray-color-30);
+}
+
+.variantOutline.typeGray:disabled {
+  background: var(--white-color);
+  border: var(--Gray-border-disabled);
+  color: var(--Gray-color-10);
+}
+
+.shapeCircle{
+
+}
+
+
+
+
