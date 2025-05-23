@@ -5,6 +5,9 @@ first start by installing dependencies.
 ```bash
 npm install
 ```
+```bash
+npm install moment
+```
 
 then run your project.
 
