@@ -1,0 +1,20 @@
+h1{
+    background:  #e5b23c;
+    color: #3c4853;
+    padding : 5px 10px;
+    border-radius: 5px;
+    width:fit-content;
+}
+.span{
+        color: #986c06;
+        font-weight: bolder;
+
+}
+.h2{
+    display:inline-block;
+    background: #ffebbe	;
+    color: #223344	;
+    padding: 5px 10px;
+    border-radius: 5px;
+    
+}

@@ -1,0 +1,38 @@
+tr th {
+  text-align: left;
+  background: lightgrey;
+}
+td,
+th {
+  padding: 5px;
+
+  background: #f4f4f4;
+}
+table {
+  border: solid #abb;
+  width: 80%;
+  margin: 20px;
+}
+button {
+  padding: 5px;
+  background: #abb;
+  border: solid 1px #333;
+  margin: 2px;
+  color: #333;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:disabled {
+  background: #b4bcbc;
+  color: #777;
+  border: solid 1px #777;
+  cursor: not-allowed;
+}
+h2 {
+  margin: 20px;
+}
+label {
+  margin-bottom: 0;
+  margin-left: 20px;
+}

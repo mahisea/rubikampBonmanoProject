@@ -1,12 +1,14 @@
 import {useEffect, useState } from "react";
 import Modal from "@/components/Modal/Modal";
-import styles from "./ProfileProduct.module.css";
+import "./ProfileProduct.css";
+import moment from "moment";
 
 const makeBorderStyleByError = (bool) => ({
   border: "1px solid " + (bool ? "red" : "#abb"),
   borderRadius: 5,
   margin: "0 4px",
   padding: "5px",
+  width: "350px"
 });
 
 const ProductFormManagement = ({
@@ -27,30 +29,43 @@ const ProductFormManagement = ({
     price: data?.price || "",
     category: data?.category || "",
     stock: data?.stock || "",
-    createdAt: data?.createdAt || "",
   });
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const { name, value } = e.target;
+
+  setForm((pre) => ({
+    ...pre,
+    [name]: value,
+  }));
+
+  if (error[name] && value.trim()) {
+    setError((errors) => ({
+      ...errors,
+      [name]: false,
+    }));
+  }
+};
 
   const handleSubmit = (e) => {
-    console.log("log");
     e.preventDefault();
+    
     const newErrors = {
       name: !form.name,
       description: !form.description,
       price: !form.price,
       category: !form.category,
       stock: !form.stock,
-      createdAt: !form.createdAt,
     };
+    console.log(newErrors);
 
     setError(newErrors);
 
     const hasError = Object.values(newErrors).some((err) => err);
     if (hasError) {
       return;
+    } else{
+     console.log("good without error");
     }
 
     if (isCreateMode) {
@@ -101,7 +116,6 @@ const ProductFormManagement = ({
     error.description ||
     error.category ||
     error.price ||
-    error.createdAt ||
     error.stock;
 
   return (
@@ -153,16 +167,7 @@ const ProductFormManagement = ({
         onChange={handleChange}
       />
       <br /> <br />
-      <input
-        type=" date"
-        style={makeBorderStyleByError(error.createdAt)}
-        value={form.createdAt}
-        placeholder="CreatedAt"
-        name="createdAt"
-        onChange={handleChange}
-      />
-      <br /> <br />
-      <button disabled={isSubmitDisabled} type="submit" style={{marginRight: "20px"}}>
+      <button disabled={isSubmitDisabled} type="submit" style={{marginRight: "20px", }}>
         {isCreateMode ? "create" : "update"}
       </button>
       {!hideCloseButton && (
@@ -188,6 +193,7 @@ const Products = () => {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
+             
 
     if (!res.ok) {
       const data = await res.json().catch(() => null);
@@ -319,8 +325,7 @@ const Products = () => {
                   <td>{products.category}</td>
                   <td>${products.price}</td>
                   <td>{products.stock}</td>
-                  <td>{products.createdAt}</td>
-
+                  <td>{moment(products.createdAt).format('YYYY-MMM-DD HH:MM:SS')}</td>
                   <td>
                     <button
                       onClick={() => {
