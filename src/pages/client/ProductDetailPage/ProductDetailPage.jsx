@@ -125,7 +125,7 @@ const ProductDetailPage = () => {
 
   return (
     <ProductLayoutPage breadcrumbItems={breadcrumbsBusiness} >
-      <h1>{product?.name}</h1>
+      <h1 className="h1" >{product?.name}</h1>
      <h2 className="h2"><span className="span">description : </span>{product?.description}</h2>
       <h2 className="h2"><span className="span">Categpry : </span>{product?.category}</h2>
       <h2 className="h2"><span className="span">Price : </span>${product?.price}</h2>
