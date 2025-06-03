@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
-  //   const = navigate
-
   return (
     <div
     >
